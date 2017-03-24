@@ -7,7 +7,7 @@ void setup() {
   if(DEBUG_MODE && CONNECTED_TO_PC) {
       Serial.begin(115200);
       while(!Serial);
-      Serial.println("Hello, World!");
+      Serial.println("Hej Søde Emil!");
 
   }
 
