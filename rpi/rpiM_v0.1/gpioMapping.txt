@@ -2,47 +2,46 @@ Pin	Function	Special Function	Used
 
 Left
 
-#01 	3.3V DC Power
-#03 	GPIO 02 	(SDA1, I2C)
-#05 	GPIO 03 	(SCL1, I2C)
-#07 	GPIO 04 	(GPIO_GCLK)
-#09 	GND
-#11 	GPIO 17		(GPIO_GEN0)
-#13	GPIO 27		(GPIO_GEN2)
-#15	GPIO 22		(GPIO_GEN3)
+#01 3.3V DC Power
+#03 GPIO 02 (SDA1, I2C)
+#05 GPIO 03 (SCL1, I2C)
+#07 GPIO 04 (GPIO_GCLK)
+#09 GND
+#11 GPIO 17	(GPIO_GEN0)
+#13	GPIO 27	(GPIO_GEN2)
+#15	GPIO 22	(GPIO_GEN3)
 #17	3.3V DC Power
-#19	GPIO 10		(SPI_MOSI)
-#21	GPIO 09		(SPI_MISO)
-#23	GPIO 11		(SPI_CLK)
+#19	GPIO 10	(SPI_MOSI)
+#21	GPIO 09	(SPI_MISO)
+#23	GPIO 11	(SPI_CLK)
 #25	GND
-#27	ID_SD		(I2C ID EEPROM)
+#27	ID_SD	(I2C ID EEPROM)
 #29	GPIO 05
-#31	GRIO 06					
-#33	GPIO 13					
-#35	GPIO 19					
-#37	GPIO 26					
+#31	GRIO 06
+#33	GPIO 13
+#35	GPIO 19
+#37	GPIO 26
 #39	GND
 
 Right
 
-#02	5V DC Power				Power to touch-display
+#02	5V DC Power [Power to touch-display]
 #04	5V DC Power
-#06	GND
-#08	GPIO 14		(TXD0)			Ground to touch-display
-#10	GPIO 15		(RXD0)
-#12	GPIO 18		(GPIO_GEN1)
+#06	GND [Ground to touch-display]
+#08	GPIO 14	(TXD0)
+#10	GPIO 15	(RXD0)
+#12	GPIO 18	(GPIO_GEN1)
 #14	GND
-#16	GPIO 23		(GPIO_GEN4)
-#18	GPIO 24		(GPIO_GEN5)		Arduino reset
+#16	GPIO 23	(GPIO_GEN4)
+#18	GPIO 24	(GPIO_GEN5)	[Arduino reset]
 #20	GND
-#22	GPIO 25		(GPIO_GEN6)		ArduinoB sck
-#24	GPIO 08		(SPI_CE0_N)		ArduinoB mosi
-#26	GPIO 07		(SPI_CE1_N)		ArduinoB miso
-#28	ID_SC		(I2C ID EEPROM)
+#22	GPIO 25	(GPIO_GEN6)	[ArduinoB sck]
+#24	GPIO 08	(SPI_CE0_N)	[ArduinoB mosi]
+#26	GPIO 07	(SPI_CE1_N)	[ArduinoB miso]
+#28	ID_SC	(I2C ID EEPROM)
 #30	GND
-#32	GPIO 12					ArduinoA reset			Arduino A ICP5 + (5V -> ICP2 & GND -> ICP6)
+#32	GPIO 12	[ArduinoA reset Arduino A ICP5 + (5V -> ICP2 & GND -> ICP6)]
 #34	GND
-#36	GPIO 16					ArduinoA sck			Arduino A ICP3
-#38	GPIO 20					ArduinoA mosi			Arduino A ICP4
-#40	GPIO 21					ArduinoA miso			Arduino A ICP1
-
+#36	GPIO 16	ArduinoA sck [Arduino A ICP3]
+#38	GPIO 20	ArduinoA mosi	[Arduino A ICP4]
+#40	GPIO 21	ArduinoA miso	[Arduino A ICP1]
