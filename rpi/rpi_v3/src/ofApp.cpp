@@ -1,7 +1,19 @@
 #include "ofApp.h"
+#include "ui.h"
+#include "laserengine.h" // Engine
+#include "global.h"
+
+#include <cstdlib>
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+
+  ofBackground(255, 255, 255);
+
+  ofEnableLighting();
+  light.enable();
+
+  camera.setDistance(100);
 
 }
 
@@ -12,6 +24,19 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+  ofEnableDepthTest();
+
+  light.setPosition(0,0,1000);
+
+  camera.begin();
+
+  ofRotateX(ofRadToDeg(5.5));
+  ofRotateZ(ofRadToDeg(0.4));
+
+  laserengine.draw();
+
+  camera.end();
 
 }
 
@@ -66,6 +91,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ui.h"
+#include "laserengine.h"
 
 class ofApp : public ofBaseApp{
 
@@ -20,5 +22,11 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+
+		LaserEngine laserengine;
+		UI ui;
+
+		ofEasyCam camera;
+		ofLight light;
+
 };
