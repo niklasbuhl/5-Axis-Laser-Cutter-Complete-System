@@ -31,6 +31,8 @@ void ofApp::draw(){
 
   camera.begin();
 
+  //ofDrawAxis(100);
+
   ofRotateX(ofRadToDeg(5.5));
   ofRotateZ(ofRadToDeg(0.4));
 
