@@ -5,17 +5,23 @@
 
 struct Instruction {
 
-  unsigned long freqX; // 0 to 4.294.967.295
-  unsigned long freqY;
-  unsigned long freqZ;
-  unsigned long duration; // Microseconds
+  unsigned int freqX; // 0 to 4.294.967.295
+  unsigned int freqY;
+  unsigned int freqZ;
+  unsigned int duration; // Microseconds
+
+  void set(unsigned int freqX, unsigned int freqY, unsigned int freqZ, unsigned int duration);
 
 };
 
+
+
 struct Node {
 
+  int index;
   Instruction *instructionPtr;
-  Node *nextNode;
+  Node *next;
+  Node *prev;
 
 };
 
@@ -27,9 +33,13 @@ public:
 
   int add(Instruction instruction);
   Instruction remove();
-  void print(Instruction &instructionPtr);
+
+  void printBufferNode(Node *node);
+  void printInstruction(Instruction *instructionPtr);
+
   void printAll();
   void printHead();
+  void printTail();
 
 private:
 
@@ -37,6 +47,8 @@ private:
 
   Instruction instructions[BUFFERSIZE];
   Node buffer[BUFFERSIZE];
+
+  int count;
 
   Node *head;
   Node *tail;

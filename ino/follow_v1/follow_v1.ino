@@ -11,32 +11,28 @@ void setup() {
 
   delay(500);
 
+  Serial.println();
   Serial.println("Hello, World!");
+  Serial.println();
+
+  // Testing
 
   Instruction instruction;
 
-  instruction.freqX = 1337;
-  instruction.freqY = 42;
-  instruction.freqZ = 27;
-  instruction.duration = 1234;
-
-
+  instruction.set(1337,42,27,1234);
   buffer.add(instruction);
 
+  instruction.set(2,3,4,5);
+  buffer.add(instruction);
+
+  buffer.remove();
+
+  instruction.set(7,9,13,100);
+  buffer.add(instruction);
+
+  buffer.printAll();
+
   buffer.printHead();
-
-  /*
-
-  stepperX.setFreq(1000);
-  stepperX.setFreq(2000);
-  stepperX.setFreq(200000);
-  stepperX.setFreq(7);
-  stepperX.setFreq(0.5);
-  stepperX.setFreq(0.2);
-  stepperX.setFreq(0.25);
-  stepperX.setFreq(0.01);
-
-  */
 
 }
 

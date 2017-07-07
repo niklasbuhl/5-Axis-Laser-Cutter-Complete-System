@@ -1,6 +1,3 @@
-#ifndef PULSEWIDTHMODULATION_CPP
-#define PULSEWIDTHMODULATION_CPP
-
 #include "pwmdriver.h"
 #include "Arduino.h"
 #include "settings.h"
@@ -14,42 +11,59 @@ PWMDriver::PWMDriver() {
 int PWMDriver::selectTimer(int n) {
 
   switch (n) {
+
+    case 1:
+
+      Serial.println("Don't use this timer.");
+      return false;
+      break;
+
+    case 2:
+
+      Serial.println("Don't use this timer.");
+      return false;
+      break;
+
     case 3:
 
       timer = 3;
       pinA = 2;
       pinB = 3;
       pinC = 5;
+      return true;
+      break;
 
-    break;
     case 4:
 
       timer = 4;
       pinA = 6;
       pinB = 7;
       pinC = 8;
+      return true;
+      break;
 
-    break;
     case 5:
 
       timer = 5;
       pinA = 46;
       pinB = 45;
       pinC = 44;
+      return true;
+      break;
 
-    break;
     default:
 
       Serial.println("Not the right timer.");
+      return false;
+      break;
 
-    break;
   }
 
 }
 
 int PWMDriver::setFreq(double frequency) {
 
-  if(DEBUG) {
+  if(DEBUG_PWMDRIVER) {
 
     Serial.println("Calculating Prescaler and Count.");
     Serial.println("");
@@ -67,7 +81,7 @@ int PWMDriver::setFreq(double frequency) {
 
     Serial.println("Frequency out of bounds.");
 
-    return -1;
+    return false;
 
   }
 
@@ -93,7 +107,7 @@ int PWMDriver::setFreq(double frequency) {
 
     count = count - 1;
 
-    if(DEBUG) Serial.println(count);
+    if(DEBUG_PWMDRIVER) Serial.println(count);
 
     if(count > setCount && count <= RESOLUTION16-1) {
 
@@ -104,7 +118,7 @@ int PWMDriver::setFreq(double frequency) {
 
   }
 
-  if(DEBUG) {
+  if(DEBUG_PWMDRIVER) {
 
     Serial.println("");
     Serial.print("Count: ");
@@ -120,5 +134,3 @@ int PWMDriver::setFreq(double frequency) {
   return 1;
 
 }
-
-#endif

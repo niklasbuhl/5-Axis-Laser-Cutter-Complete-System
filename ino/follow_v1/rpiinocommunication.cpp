@@ -1,6 +1,0 @@
-#ifndef RPIINOCOMMUNICATION_CPP
-#define RPIINOCOMMUNICATION_CPP
-
-
-
-#endif
